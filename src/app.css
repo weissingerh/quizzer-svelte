@@ -1,0 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.btn {
+	@apply text-center block px-10 py-2 w-full my-2 rounded-lg shadow-md hover:opacity-90;
+}
