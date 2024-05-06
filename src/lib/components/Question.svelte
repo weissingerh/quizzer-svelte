@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { correctAnswers, quizQuestions, questionNumber } from '../store';
 	import { readonly } from 'svelte/store';
-	import type { Question } from './types/Quiz';
+	import type { Question, QuizQuestion } from './types/Quiz';
 	import { goto } from '$app/navigation';
 
 	const questions = readonly(quizQuestions);
@@ -10,17 +10,20 @@
 	let answerGiven = $state(false);
 
 	questions.subscribe(() => {});
-	questionNumber.subscribe(() => {});
+	questionNumber.subscribe((value: number) => {
+		console.log(value);
+		return value;
+	});
 	correctAnswers.subscribe((value: number) => value);
 
-	function getAnswersInRandomOrder(question: Question) {
+	function getAnswersInRandomOrder(question: QuizQuestion) {
 		return [question.correct_answer, ...question.incorrect_answers].sort(() => Math.random() - 0.5);
 	}
 	function addCorrectAnswer() {
 		correctAnswers.update((c) => c + 1);
 	}
 
-	function checkIfAnswerIsCorrect(question: Question, answer: string) {
+	function checkIfAnswerIsCorrect(question: QuizQuestion, answer: string) {
 		answerGiven = true;
 		const isCorrect: boolean = isCorrectAnswer(question, answer);
 		correctIndication = setCorrectIndicationText(isCorrect);
@@ -29,7 +32,7 @@
 		}
 	}
 
-	function isCorrectAnswer(question: Question, answer: string): boolean {
+	function isCorrectAnswer(question: QuizQuestion, answer: string): boolean {
 		return question.correct_answer === answer;
 	}
 

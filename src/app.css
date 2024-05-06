@@ -6,6 +6,16 @@
 	@apply text-center block px-10 py-2 w-full my-2 rounded-lg shadow-md hover:opacity-90;
 }
 
+.label {
+	@apply text-sm mt-2 block;
+}
 .input {
-	@apply border border-black text-black px-10 py-2 bg-white rounded-lg shadow-md my-2 w-full;
+	@apply border border-black text-black px-6 py-2 mb-2 rounded-lg shadow-md w-full bg-white;
+}
+.input.error {
+	@apply border-red-500 bg-red-100;
+}
+
+.errorMsg {
+	@apply inline-block text-sm bg-red-400 rounded-md text-white px-2 py-1;
 }
