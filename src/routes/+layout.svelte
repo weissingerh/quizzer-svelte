@@ -5,7 +5,7 @@
 	let { data } = $props();
 </script>
 
-<div data-theme={theme} class="relative w-full h-screen flex flex-col bg-background">
+<div data-theme={theme} class="relative w-full h-screen flex flex-col bg-background align-middle">
 	<header class="w-full bg-backgroundLight h-10 flex justify-between flex-none">
 		<a class="inline-block h-full py-1 px-2 text-2xl" href="/">🏡</a>
 		{#if data.name}
@@ -13,7 +13,7 @@
 		{/if}
 		<ThemeToggle bind:theme />
 	</header>
-	<main class="bg-background w-full text-text">
+	<main class="bg-background max-w-md w-full self-center text-text">
 		<div class="px-10 py-6">
 			<slot />
 		</div>
