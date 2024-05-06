@@ -8,7 +8,9 @@
 	let correctIndication = $state('');
 	let answerGiven = $state(false);
 
-	questions.subscribe(() => {});
+	questions.subscribe((v) => {
+		console.log(v);
+	});
 	questionNumber.subscribe(() => {});
 	correctAnswers.subscribe((value: number) => value);
 

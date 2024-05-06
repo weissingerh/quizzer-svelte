@@ -5,3 +5,7 @@
 .btn {
 	@apply text-center block px-10 py-2 w-full my-2 rounded-lg shadow-md hover:opacity-90;
 }
+
+.input {
+	@apply border border-black text-black px-10 py-2 bg-white rounded-lg shadow-md my-2 w-full;
+}

@@ -36,9 +36,7 @@
 	function setCorrectIndicationText(isCorrectAnswer: boolean) {
 		return isCorrectAnswer ? 'Correct!' : 'Incorrect!';
 	}
-	function getNewQuestionNumber(number: number) {
-		return number + 1;
-	}
+
 	function nextQuestion() {
 		questionNumber.update((n) => n + 1);
 		goto('/quizzer/{questionNumber}');
@@ -62,7 +60,6 @@
 	{/each}
 	<p>{correctIndication}</p>
 	{#if answerGiven}
-		{$questionNumber}
 		{#if $questionNumber + 1 == $questions.length}
 			<a href="/quizzer/results" class="btn bg-accentOneLight">Show Results</a>
 		{:else}
