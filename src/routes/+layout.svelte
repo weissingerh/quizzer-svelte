@@ -9,7 +9,7 @@
 	<header class="w-full relative bg-backgroundLight h-10 flex justify-between flex-none">
 		<a class="inline-block h-full py-1 px-2 text-2xl" href="/">🏡</a>
 		{#if data.name}
-			<span class="absolute left-12 flex items-center h-full text-sm text-accentTwoDarker"
+			<span class="absolute left-12 flex items-center h-full text-sm text-textDarker"
 				>Hey there, {data.name}!</span
 			>
 		{/if}
