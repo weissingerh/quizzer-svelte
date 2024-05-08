@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { correctAnswers, quizQuestions, questionNumber } from '../store';
 	import { readonly } from 'svelte/store';
-	import type { Question, QuizQuestion } from './types/Quiz';
+	import type { Question, QuizQuestion } from '../types';
 	import { goto } from '$app/navigation';
 
 	const questions = readonly(quizQuestions);
@@ -64,9 +64,11 @@
 	<p>{correctIndication}</p>
 	{#if answerGiven}
 		{#if $questionNumber + 1 == $questions.length}
-			<a href="/quizzer/results" class="btn bg-accentOneLight">Show Results</a>
+			<a href="/quizzer/results" class="btn bg-accentOneDarker text-white">Show Results</a>
 		{:else}
-			<button class="btn bg-accentOneLight" on:click={() => nextQuestion()}>Next question</button>
+			<button class="btn bg-accentTwoDarker text-white" on:click={() => nextQuestion()}
+				>Next question</button
+			>
 		{/if}
 	{/if}
 {/if}

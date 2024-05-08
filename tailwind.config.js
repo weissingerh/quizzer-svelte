@@ -14,28 +14,24 @@ export default {
 	plugins: [
 		createThemes({
 			light: {
-				accentOne: '#d4eaf7',
-				accentOneLight: '#b6ccd8',
-				accentOneLightest: '#3b3c3d',
-				accentTwo: '#71c4ef',
-				accentTwoLight: '#00668c',
-				text: '#1d1c1c',
-				textDarker: '#313d44',
-				background: '#fffefb',
-				backgroundLight: '#f5f4f1',
-				backgroundLightest: '#cccbc8'
+				accentOne: '#B0E3E3',
+				accentOneDarker: '#7FC9C9',
+				accentTwo: '#8C66FF',
+				accentTwoDarker: '#5D3FA3',
+				text: '#2D2D2D',
+				textDarker: '#1E1E1E',
+				background: '#FFFFFF',
+				backgroundLight: '#F6F6F6'
 			},
 			dark: {
-				accentOne: '#0085ff',
-				accentOneLight: '#69b4ff',
-				accentOneLightest: '#e0ffff',
-				accentTwo: '#006fff',
-				accentTwoLight: '#e1ffff',
+				accentOne: '#297A7A',
+				accentOneDarker: '#1E5757',
+				accentTwo: '#6633CC',
+				accentTwoDarker: '#3F267A',
 				text: '#FFFFFF',
-				textDarker: '#9e9e9e',
-				background: '#1E1E1E',
-				backgroundLight: '#2d2d2d',
-				backgroundLightest: '#454545'
+				textDarker: '#E6E6E6',
+				background: '#2D2D2D',
+				backgroundLight: '#1A1A1A'
 			}
 		})
 	]

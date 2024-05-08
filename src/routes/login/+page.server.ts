@@ -12,20 +12,21 @@ export async function load(event: any): PageServerData {
 export const actions: Actions = {
 	login: async (event) => {
 		let form = await superValidate(event.request, zod(loginSchema));
-		console.log('FORM');
-		console.log(form);
+
 		if (!form.valid) {
 			return fail(400, { form });
 		}
+
 		if (form.data.email != 'test@mail.com') {
 			setError(form, 'email', 'Invalid email.');
 		}
 		if (form.data.password !== 'hello123') {
 			setError(form, 'password', 'Invalid password.');
 		}
-		console.log('HI');
+
 		event.cookies.set('name', form.data.name, { path: '/', httpOnly: true });
 		event.locals.name = form.data.name;
+
 		return { form };
 	}
 };

@@ -1,5 +1,5 @@
 import { quizQuestions, questionNumber, correctAnswers } from '$lib/store';
-import { type Question, type ApiResult, type QuizQuestion } from '$lib/components/types/Quiz';
+import { type Question, type ApiResult, type QuizQuestion } from '$lib/types';
 
 const APIURL: string = 'https://opentdb.com/api.php?amount=5';
 
@@ -34,6 +34,7 @@ function replaceHtmlEntities(str: string) {
 		.replaceAll('&ntilde;', 'ñ')
 		.replaceAll('&uuml;', 'ü')
 		.replaceAll('&ldquo;', '"')
+		.replaceAll('&rdquo;', '"')
 		.replaceAll('&iacute;', 'í')
 		.replaceAll('&divide;', '/')
 		.replaceAll('&rsquo;', "'")
@@ -48,9 +49,10 @@ async function fetchQuestionEndpoint(event: any): Promise<ApiResult> {
 			return data;
 		})
 		.catch((error: any) => {
-			console.log('error here');
-			error.status === 429 ? error(429) : console.log('error');
-			return 'error';
+			error(429, {
+				message:
+					'Too many requests for API, please wait 5 seconds until you start the quiz again 🫥'
+			});
 		});
 	return apiResult;
 }

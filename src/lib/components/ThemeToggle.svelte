@@ -11,7 +11,6 @@
 		const currentIndex = themes.indexOf(theme);
 		theme = themes[(currentIndex + 1) % themes.length];
 	}
-
 	let icon = $derived.by(() => {
 		if (theme === 'light') return '🌞';
 		if (theme === 'dark') return '🌚';
@@ -19,17 +18,15 @@
 </script>
 
 {#key theme}
-	<button transition:slide={{ axis: 'x' }} onclick={toggleTheme}>
-		{icon}
-	</button>
+	<div>
+		<button
+			class="absolute top-0 right-0 text-3xl cursor-pointer"
+			transition:slide={{ axis: 'x' }}
+			onclick={toggleTheme}
+		>
+			{icon}
+		</button>
+	</div>
 {/key}
 
 <slot />
-
-<style lang="postcss">
-	button {
-		@apply absolute top-0 right-0;
-		@apply text-3xl;
-		@apply cursor-pointer;
-	}
-</style>
