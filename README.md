@@ -1,38 +1,9 @@
-# create-svelte
+# Quizzer
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/main/packages/create-svelte).
+[https://qmaster-rosy.vercel.app/](https://qmaster-rosy.vercel.app/)
 
-## Creating a project
+Quizzer is a very simple quiz app built with Svelte, that allows you to take quizzes with 5 questions. The questions come from an external API `https://opentdb.com/`.
 
-If you're seeing this, you've probably already done this step. Congrats!
+There is also a very very complex (/s) login system built in, that allows you to login using an email and a password.
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
-
-# create a new project in my-app
-npm create svelte@latest my-app
-```
-
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+This project was very very fun to make, I'm really glad I learned about Svelte tbh, it makes building little apps very fun and I'm actually excited to use it in the future. 🥳
